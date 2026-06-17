@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: jsy-expense-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/auth/dept-list
+    envVars:
+      - key: NODE_VERSION
+        value: 22.22.2
+      - key: PORT
+        value: 10000
